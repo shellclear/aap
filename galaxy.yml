@@ -1,0 +1,12 @@
+namespace: ppacific
+name: aap
+version: 1.0.0
+readme: README.md
+authors:
+- Paulo <ppacific@redhat.com>
+description: AAP
+license:
+- 'GPL-2.0-or-later'
+dependencies:
+  community.general: '>=5.0.2'
+repository: https://github.com/shellclear/aap

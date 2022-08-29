@@ -1,0 +1,61 @@
+---
+# tasks file for aap_requirements_check
+- name: Import os_version.yml file
+  tags: 
+    - os_version
+  import_tasks: os_version.yml
+
+- name: Import compute_storage.yml file
+  tags: 
+    - compute_storage
+  import_tasks: compute_storage.yml
+
+- name: Import ansible_credentials.yml file
+  tags: 
+    - ansible_credentials
+  import_tasks: ansible_credentials.yml
+
+- name: Import subscription.yml file
+  tags: 
+    - subscription
+  import_tasks: subscription.yml
+
+- name: Import install_packages.yml file
+  tags: 
+    - install_packages
+  import_tasks: install_packages.yml
+
+- name: Import services.yml file
+  tags: 
+    - services
+  import_tasks: services.yml
+
+- name: Import configure_chrony.yml file
+  tags: 
+    - configure_chrony
+  import_tasks: configure_chrony.yml
+
+- name: Import configure_firewall_rules.yml file
+  tags: 
+    - configure_firewall_rules
+  import_tasks: configure_firewall_rules.yml
+
+- name: Import check_access_download_collections.yml file
+  tags: 
+    - check_access_download_collections
+  import_tasks: check_access_download_collections.yml
+
+- name: Import configure_hostname.yml file
+  tags:
+    - configure_hostname
+  import_tasks: configure_hostname.yml
+
+- name: Import generate_hosts_file.yml file
+  tags:
+    - generate_hosts_file
+  import_tasks: generate_hosts_file.yml
+
+- name: Import generate_intentory_setup.yml file
+  tags:
+    - generate_intentory_setup
+  import_tasks: generate_intentory_setup.yml

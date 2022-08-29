@@ -1,0 +1,27 @@
+---
+# tasks file for aap_requirements_check
+- name: Check cpu, memory and storage requirements on the hosts
+  block:
+    - name: Ensure that system memory size is correct on the hosts
+      assert:
+        that: 
+          - ansible_memtotal_mb >= memory
+        msg: The system memory is insufficient, {{ inventory_hostname }} memory is equals to {{ ansible_memtotal_mb }} and should be equals to {{ memory }}
+
+    - name: Ensure that cpu number size is correct on the hosts
+      assert:
+        that:
+          - ansible_processor_vcpus >= cpu
+        msg: The system cpu is insufficient, {{ inventory_hostname }} cpu number is equal to {{ ansible_processor_vcpus }} and it should be equals to {{ cpu }}
+
+    - name: Ensure that that volumes size is correct on the hosts
+      vars:
+        root_filesystem: "{{ ansible_mounts | selectattr('mount','equalto', hosts_volumes['mountpoint']) | list | first }}"
+        root_filesystem_total_size_GiB: "{{ ( root_filesystem['size_total'] / 1024 | pow(3) ) | round | int }}"
+      assert:
+        that:
+          - root_filesystem_total_size_GiB | int >= hosts_volumes['size'] | int
+        msg: "{{ inventory_hostname }} has a {{ hosts_volumes['mountpoint'] }} filesystem size of {{ root_filesystem_total_size_GiB }}GiB but it should be equals to {{ hosts_volumes['size'] }}GiB"
+      loop: "{{ volumes }}"
+      loop_control:
+        loop_var: hosts_volumes
