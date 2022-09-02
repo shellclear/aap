@@ -29,7 +29,3 @@ common_urls:
   - https://cert.cloud.redhat.com
   # Execution Environments (EE)
   - https://registry.redhat.io
-
-bastion_common_packets:
-  - ansible
-  - ansible-automation-platform-installer

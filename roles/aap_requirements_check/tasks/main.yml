@@ -54,8 +54,3 @@
   tags:
     - generate_hosts_file
   import_tasks: generate_hosts_file.yml
-
-- name: Import generate_intentory_setup.yml file
-  tags:
-    - generate_intentory_setup
-  import_tasks: generate_intentory_setup.yml

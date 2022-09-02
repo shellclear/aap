@@ -1,9 +1,9 @@
 ---
 # tasks file for aap_requirements_check
-# - name: Ensure the latest package versions are installed
-#   ansible.builtin.yum:
-#     name: "*"
-#     state: latest
+- name: Ensure the latest package versions are installed
+  ansible.builtin.yum:
+    name: "*"
+    state: latest
   
 - name: Ensure the basic packages are installed
   ansible.builtin.yum:
