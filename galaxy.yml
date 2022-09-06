@@ -1,6 +1,6 @@
 namespace: shellclear
 name: aap
-version: 1.0.0
+version: 1.0.1
 readme: README.md
 authors:
 - shelclear <shellclear@gmail.com>
@@ -8,5 +8,5 @@ description: AAP
 license:
 - 'GPL-2.0-or-later'
 dependencies:
-  community.general: '>=5.0.2'
+  community.general: '>=5.5.0'
 repository: https://github.com/shellclear/aap
