@@ -21,10 +21,19 @@ Install the collection with ansible galaxy cli.
 ansible-galaxy collection install -r requirements.yml
 ```
 
-If you preffer also is available another option to install from git
+If you preffer there are some different options available to install the collection:
+
+install the collection from git repo via https and main branch
 
 ```command
 ansible-galaxy collection install git+https://github.com/shellclear/ansible_collection_aap.git,main
+```
+
+install from a local git repo
+
+```command
+git clone https://github.com/shellclear/ansible_collection_aap.git /tmp/ansible_collection_aap
+ansible-galaxy collection install git+file:///tmp/ansible_collection_aap
 ```
 
 License
