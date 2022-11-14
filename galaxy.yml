@@ -8,7 +8,7 @@ description: Ansible collection to automate AAP related tasks
 license:
 - 'GPL-3.0-or-later'
 dependencies:
-  community.general: '>=5.5.0'
+  "community.general": ">=5.5.0"
 repository: https://github.com/shellclear/ansible_collection_aap
 issues: https://github.com/shellclear/ansible_collection_aap/issues
 tags:
